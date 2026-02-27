@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>PulseCore API Tester</title>
+  <style>
+    body { font-family: monospace; max-width: 800px; margin: 50px auto; padding: 20px; }
+    button { padding: 10px 20px; margin: 5px; background: #007bff; color: white; border: none; cursor: pointer; }
+    button:hover { background: #0056b3; }
+    pre { background: #f8f9fa; padding: 20px; border-radius: 5px; max-height: 400px; overflow: auto; }
+    input { padding: 8px; margin: 5px; width: 200px; }
+    .success { color: green; }
+    .error { color: red; }
+  </style>
+</head>
+<body>
+  <h1>🩸 PulseCore API Tester</h1>
+  
+  <h3>🔐 Autenticación</h3>
+  <input id="email" placeholder="admin@test.com" value="admin@test.com">
+  <input id="pass" type="password" placeholder="123" value="123">
+  <br>
+  <button onclick="login()">Login</button>
+  <button onclick="register()">Register ADMIN</button>
+  <button onclick="registerAgent()">Register AGENT</button>
+  
+  <h3>📋 Endpoints Proteger (copia token arriba)</h3>
+  <input id="token" placeholder="Bearer eyJh...">
+  <button onclick="getUsers()">GET /users</button>
+  <button onclick="getCampaigns()">GET /campaigns</button>
+  
+  <h3>📊 Status</h3>
+  <button onclick="dbStatus()">DB Status</button>
+  
+  <h3>📄 Resultado:</h3>
+  <pre id="result">Click cualquier botón...</pre>
+
+  <script>
+    let currentToken = '';
+
+    async function api(url, options = {}) {
+      try {
+        const res = await fetch(url, {
+          headers: {
+            'Content-Type': 'application/json',
+            ...options.headers
+          },
+          ...options
+        });
+        const data = await res.json();
+        document.getElementById('result').innerHTML = 
+          `<span class="${res.ok ? 'success' : 'error'}">Status: ${res.status}</span>\n` +
+          JSON.stringify(data, null, 2);
+        return data;
+      } catch (error) {
+        document.getElementById('result').textContent = 'Error: ' + error.message;
+      }
+    }
+
+    async function login() {
+      const email = document.getElementById('email').value;
+      const password = document.getElementById('pass').value;
+      const data = await api('/api/auth/login', {
+        method: 'POST',
+        body: JSON.stringify({ email, password })
+      });
+      if (data.token) {
+        currentToken = data.token;
+        document.getElementById('token').value = `Bearer ${data.token}`;
+      }
+    }
+
+    async function register() {
+      const email = `admin${Date.now()}@test.com`;
+      const password = document.getElementById('pass').value;
+      await api('/api/auth/register', {
+        method: 'POST',
+        body: JSON.stringify({ email, password, role: 'ADMIN' })
+      });
+    }
+
+    async function registerAgent() {
+      const email = `agent${Date.now()}@test.com`;
+      const password = document.getElementById('pass').value;
+      await api('/api/auth/register', {
+        method: 'POST',
+        body: JSON.stringify({ email, password, role: 'AGENT' })
+      });
+    }
+
+    async function getUsers() {
+      await api('/api/sql/users', {
+        headers: { Authorization: document.getElementById('token').value }
+      });
+    }
+
+    async function getCampaigns() {
+      await api('/api/sql/campaigns', {
+        headers: { Authorization: document.getElementById('token').value }
+      });
+    }
+
+    async function dbStatus() {
+      await api('/db-test');
+    }
+  </script>
+  
+</body>
+</html>
