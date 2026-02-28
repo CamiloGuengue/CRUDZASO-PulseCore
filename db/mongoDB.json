@@ -1,0 +1,43 @@
+{
+    "_id": "ObjectId",
+    "user_id": 15,
+    "subject": "Problema con cita programada",
+    "category": "APPOINTMENT",
+    "priority": 2,
+    "status": "OPEN",
+    "tags": ["urgent", "medical", "schedule"],
+
+    "related_type": "appointment",
+    "related_ref": 103,
+
+    "history": [
+        {
+        "event": "CREATED",
+        "date": "2025-01-10T10:00:00Z"
+        },
+        {
+        "event": "STATUS_CHANGED_TO_IN_PROGRESS",
+        "date": "2025-01-10T11:00:00Z"
+        }
+    ],
+
+    "messages": [
+        {
+        "author_type": "USER",
+        "author_name": "Juan Pérez",
+        "body": "No puedo asistir a la cita.",
+        "attachment_url": null,
+        "created_at": "2025-01-10T10:05:00Z"
+        },
+        {
+        "author_type": "AGENT",
+        "author_name": "Soporte PulseCore",
+        "body": "Estamos revisando tu caso.",
+        "attachment_url": null,
+        "created_at": "2025-01-10T10:20:00Z"
+        }
+    ],
+
+    "created_at": "2025-01-10T10:00:00Z",
+    "updated_at": "2025-01-10T11:00:00Z"
+}

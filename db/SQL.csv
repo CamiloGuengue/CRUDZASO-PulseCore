@@ -1,0 +1,71 @@
+CREATE DATABASE pulseCore;
+USE pulseCore;
+
+-- USERS
+CREATE TABLE users (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    email VARCHAR(150) UNIQUE NOT NULL,
+    full_name VARCHAR(150) NOT NULL,
+    phone VARCHAR(20),
+    city VARCHAR(100),
+    status VARCHAR(50),
+    preferred_channel VARCHAR(50),
+    password VARCHAR(255) NOT NULL
+);
+
+-- ROLES
+CREATE TABLE roles (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(50) UNIQUE NOT NULL
+);
+
+-- USER_ROLES
+CREATE TABLE user_roles (
+    user_id INT,
+    role_id INT,
+    PRIMARY KEY (user_id, role_id),
+    FOREIGN KEY (user_id) REFERENCES users(id),
+    FOREIGN KEY (role_id) REFERENCES roles(id)
+);
+
+-- DONORS
+CREATE TABLE donors (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT UNIQUE,
+    blood_type VARCHAR(5),
+    donor_level VARCHAR(50),
+    last_donation_date DATE,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
+
+-- CAMPAIGNS
+CREATE TABLE campaigns (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    name VARCHAR(150),
+    city VARCHAR(100),
+    start_date DATE,
+    end_date DATE
+);
+
+-- APPOINTMENTS
+CREATE TABLE appointments (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    donor_id INT NOT NULL,
+    campaign_id INT NOT NULL,
+    scheduled_at TIMESTAMP,
+    status VARCHAR(50),
+    location VARCHAR(150),
+    FOREIGN KEY (donor_id) REFERENCES donors(id),
+    FOREIGN KEY (campaign_id) REFERENCES campaigns(id)
+);
+
+-- NOTIFICATIONS
+CREATE TABLE notifications (
+    id INT AUTO_INCREMENT PRIMARY KEY,
+    user_id INT,
+    channel VARCHAR(50),
+    message TEXT,
+    status VARCHAR(50),
+    sent_at TIMESTAMP,
+    FOREIGN KEY (user_id) REFERENCES users(id)
+);
