@@ -38,333 +38,247 @@
         }
     </style>
 </head>
-<body class="bg-background-light dark:bg-background-dark font-display text-slate-900 dark:text-slate-100">
+<body  class="bg-background-light font-display text-slate-900 min-h-screen">
+
+<!-- ==================== LAYOUT ==================== -->
 <div class="flex h-screen overflow-hidden">
-<!-- Sidebar Navigation -->
-<aside class="w-64 flex-shrink-0 border-r border-slate-200 dark:border-slate-800 bg-white dark:bg-slate-900 flex flex-col justify-between">
-<div class="p-6">
-<div class="flex items-center gap-3 mb-10">
-<div class="size-10 bg-primary rounded-lg flex items-center justify-center text-white">
-<span class="material-symbols-outlined">bloodtype</span>
-</div>
-<div>
-<h1 class="text-lg font-bold leading-tight">BloodBank Pro</h1>
-<p class="text-xs text-slate-500 dark:text-slate-400 uppercase tracking-wider font-semibold">Inventory System</p>
-</div>
-</div>
-<nav class="space-y-1">
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary font-semibold" href="#">
-<span class="material-symbols-outlined">dashboard</span>
-<span>Dashboard</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
-<span class="material-symbols-outlined">inventory_2</span>
-<span>Inventory</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
-<span class="material-symbols-outlined">group</span>
-<span>Donors</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
-<span class="material-symbols-outlined">calendar_today</span>
-<span>Appointments</span>
-</a>
-<a class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 dark:text-slate-400 hover:bg-slate-100 dark:hover:bg-slate-800 transition-colors" href="#">
-<span class="material-symbols-outlined">bar_chart</span>
-<span>Reports</span>
-</a>
-</nav>
-</div>
-<div class="p-6 border-t border-slate-200 dark:border-slate-800">
-<div class="flex items-center gap-3">
-<div class="size-10 rounded-full bg-slate-200 dark:bg-slate-700 overflow-hidden">
-<img alt="Admin" data-alt="Profile picture of medical administrator" src="https://lh3.googleusercontent.com/aida-public/AB6AXuDLPmMpbMX6u2PkoBQlkDo-NMuTjebf56G-0BUyQEyDxvSQXJM83XID7q459X-QSpYbRwmReMf6_-ZeY-Lkq5gGmv0DEza_R_Rxm2LHj8wtRDIPyHfpzjD2i7zNzQc5jO9ltJ5W1JnGhkAR3CXC4GgTDdXcTiA3Lys_EH_UQn-t3Uy6no230nv7kkISOHKSUu6YZL9Zax1o7uweSDdnoiOfSh_NyaL9Ql7wc_fDKEEBopkBjLJ_cCxuZVaF1KHF3wDKrdVAbzw0zW4"/>
-</div>
-<div>
-<p class="text-sm font-bold">Dr. Julian Reed</p>
-<p class="text-xs text-slate-500">Administrator</p>
-</div>
-</div>
-</div>
-</aside>
-<!-- Main Content Area -->
-<main class="flex-1 overflow-y-auto p-8">
-<!-- Header Section -->
-<div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
-<div>
-<h2 class="text-3xl font-black tracking-tight">Inventory Dashboard</h2>
-<p class="text-slate-500 dark:text-slate-400">Real-time monitoring of blood supplies and donor activities.</p>
-</div>
-<div class="flex gap-3">
-<button class="flex items-center gap-2 px-4 py-2 border border-slate-200 dark:border-slate-700 rounded-lg font-semibold hover:bg-slate-50 dark:hover:bg-slate-800 transition-colors">
-<span class="material-symbols-outlined text-[20px]">file_download</span>
-                        Export Data
-                    </button>
-<button class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20">
-<span class="material-symbols-outlined text-[20px]">add</span>
-                        New Donation
-                    </button>
-</div>
-</div>
-<!-- Metric Cards -->
-<div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
-<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
-<div class="flex justify-between items-start mb-4">
-<div class="size-12 rounded-lg bg-blue-50 dark:bg-blue-900/20 flex items-center justify-center text-blue-600">
-<span class="material-symbols-outlined">water_drop</span>
-</div>
-<span class="px-2 py-1 rounded bg-green-100 dark:bg-green-900/30 text-green-600 text-xs font-bold uppercase tracking-wider">+12% WoW</span>
-</div>
-<p class="text-slate-500 text-sm font-medium mb-1">Total Units</p>
-<p class="text-3xl font-black">1,458 <span class="text-sm font-normal text-slate-400">units</span></p>
-</div>
-<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
-<div class="flex justify-between items-start mb-4">
-<div class="size-12 rounded-lg bg-orange-50 dark:bg-orange-900/20 flex items-center justify-center text-orange-600">
-<span class="material-symbols-outlined">warning</span>
-</div>
-<span class="px-2 py-1 rounded bg-orange-100 dark:bg-orange-900/30 text-orange-600 text-xs font-bold uppercase tracking-wider">Alert</span>
-</div>
-<p class="text-slate-500 text-sm font-medium mb-1">Critical Levels</p>
-<p class="text-3xl font-black">3 <span class="text-sm font-normal text-slate-400">Types Low</span></p>
-</div>
-<div class="bg-white dark:bg-slate-900 p-6 rounded-xl border border-slate-200 dark:border-slate-800 shadow-sm">
-<div class="flex justify-between items-start mb-4">
-<div class="size-12 rounded-lg bg-primary/5 flex items-center justify-center text-primary">
-<span class="material-symbols-outlined">volunteer_activism</span>
-</div>
-<span class="px-2 py-1 rounded bg-slate-100 dark:bg-slate-800 text-slate-600 text-xs font-bold uppercase tracking-wider">Today</span>
-</div>
-<p class="text-slate-500 text-sm font-medium mb-1">Recent Donations</p>
-<p class="text-3xl font-black">86 <span class="text-sm font-normal text-slate-400">units added</span></p>
-</div>
-</div>
-<!-- Blood Type Grid -->
-<div class="mb-6">
-<h3 class="text-xl font-bold mb-4">Stock Levels by Blood Type</h3>
-<div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
-<!-- A+ Card (Stable) -->
-<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 hover:shadow-md transition-shadow">
-<div class="flex justify-between items-center mb-4">
-<span class="text-2xl font-black text-primary">A+</span>
-<span class="px-2 py-1 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase">Stable</span>
-</div>
-<div class="mb-4">
-<div class="flex justify-between text-sm mb-1">
-<span class="text-slate-500">Current Stock</span>
-<span class="font-bold">450 units</span>
-</div>
-<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
-<div class="bg-green-500 h-2 rounded-full" style="width: 75%"></div>
-</div>
-</div>
-<button class="w-full py-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white hover:border-primary transition-all">
-<span class="material-symbols-outlined text-[18px]">add_box</span>
-                            Quick Entry
-                        </button>
-</div>
-<!-- A- Card (Low) -->
-<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 hover:shadow-md transition-shadow">
-<div class="flex justify-between items-center mb-4">
-<span class="text-2xl font-black text-primary">A-</span>
-<span class="px-2 py-1 rounded-full bg-orange-100 text-orange-700 text-[10px] font-bold uppercase">Low</span>
-</div>
-<div class="mb-4">
-<div class="flex justify-between text-sm mb-1">
-<span class="text-slate-500">Current Stock</span>
-<span class="font-bold">42 units</span>
-</div>
-<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
-<div class="bg-orange-500 h-2 rounded-full" style="width: 20%"></div>
-</div>
-</div>
-<button class="w-full py-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white hover:border-primary transition-all">
-<span class="material-symbols-outlined text-[18px]">add_box</span>
-                            Quick Entry
-                        </button>
-</div>
-<!-- B+ Card (Stable) -->
-<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 hover:shadow-md transition-shadow">
-<div class="flex justify-between items-center mb-4">
-<span class="text-2xl font-black text-primary">B+</span>
-<span class="px-2 py-1 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase">Stable</span>
-</div>
-<div class="mb-4">
-<div class="flex justify-between text-sm mb-1">
-<span class="text-slate-500">Current Stock</span>
-<span class="font-bold">310 units</span>
-</div>
-<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
-<div class="bg-green-500 h-2 rounded-full" style="width: 60%"></div>
-</div>
-</div>
-<button class="w-full py-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white hover:border-primary transition-all">
-<span class="material-symbols-outlined text-[18px]">add_box</span>
-                            Quick Entry
-                        </button>
-</div>
-<!-- B- Card (Critical) -->
-<div class="bg-white dark:bg-slate-900 border border-primary/30 rounded-xl p-5 shadow-sm shadow-primary/5 hover:shadow-md transition-shadow bg-primary/5">
-<div class="flex justify-between items-center mb-4">
-<span class="text-2xl font-black text-primary">B-</span>
-<span class="px-2 py-1 rounded-full bg-red-600 text-white text-[10px] font-bold uppercase">Critical</span>
-</div>
-<div class="mb-4">
-<div class="flex justify-between text-sm mb-1">
-<span class="text-slate-500">Current Stock</span>
-<span class="font-bold text-primary">15 units</span>
-</div>
-<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
-<div class="bg-primary h-2 rounded-full" style="width: 8%"></div>
-</div>
-</div>
-<button class="w-full py-2 bg-primary text-white rounded-lg text-sm font-bold flex items-center justify-center gap-2 hover:bg-primary/90 transition-all">
-<span class="material-symbols-outlined text-[18px]">add_box</span>
-                            Emergency Restock
-                        </button>
-</div>
-<!-- AB+ Card (Stable) -->
-<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 hover:shadow-md transition-shadow">
-<div class="flex justify-between items-center mb-4">
-<span class="text-2xl font-black text-primary">AB+</span>
-<span class="px-2 py-1 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase">Stable</span>
-</div>
-<div class="mb-4">
-<div class="flex justify-between text-sm mb-1">
-<span class="text-slate-500">Current Stock</span>
-<span class="font-bold">120 units</span>
-</div>
-<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
-<div class="bg-green-500 h-2 rounded-full" style="width: 55%"></div>
-</div>
-</div>
-<button class="w-full py-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white hover:border-primary transition-all">
-<span class="material-symbols-outlined text-[18px]">add_box</span>
-                            Quick Entry
-                        </button>
-</div>
-<!-- AB- Card (Critical) -->
-<div class="bg-white dark:bg-slate-900 border border-primary/30 rounded-xl p-5 shadow-sm shadow-primary/5 hover:shadow-md transition-shadow bg-primary/5">
-<div class="flex justify-between items-center mb-4">
-<span class="text-2xl font-black text-primary">AB-</span>
-<span class="px-2 py-1 rounded-full bg-red-600 text-white text-[10px] font-bold uppercase">Critical</span>
-</div>
-<div class="mb-4">
-<div class="flex justify-between text-sm mb-1">
-<span class="text-slate-500">Current Stock</span>
-<span class="font-bold text-primary">8 units</span>
-</div>
-<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
-<div class="bg-primary h-2 rounded-full" style="width: 5%"></div>
-</div>
-</div>
-<button class="w-full py-2 bg-primary text-white rounded-lg text-sm font-bold flex items-center justify-center gap-2 hover:bg-primary/90 transition-all">
-<span class="material-symbols-outlined text-[18px]">add_box</span>
-                            Emergency Restock
-                        </button>
-</div>
-<!-- O+ Card (Stable) -->
-<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 hover:shadow-md transition-shadow">
-<div class="flex justify-between items-center mb-4">
-<span class="text-2xl font-black text-primary">O+</span>
-<span class="px-2 py-1 rounded-full bg-green-100 text-green-700 text-[10px] font-bold uppercase">Stable</span>
-</div>
-<div class="mb-4">
-<div class="flex justify-between text-sm mb-1">
-<span class="text-slate-500">Current Stock</span>
-<span class="font-bold">600 units</span>
-</div>
-<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
-<div class="bg-green-500 h-2 rounded-full" style="width: 90%"></div>
-</div>
-</div>
-<button class="w-full py-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white hover:border-primary transition-all">
-<span class="material-symbols-outlined text-[18px]">add_box</span>
-                            Quick Entry
-                        </button>
-</div>
-<!-- O- Card (Low) -->
-<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl p-5 hover:shadow-md transition-shadow">
-<div class="flex justify-between items-center mb-4">
-<span class="text-2xl font-black text-primary">O-</span>
-<span class="px-2 py-1 rounded-full bg-orange-100 text-orange-700 text-[10px] font-bold uppercase">Low</span>
-</div>
-<div class="mb-4">
-<div class="flex justify-between text-sm mb-1">
-<span class="text-slate-500">Current Stock</span>
-<span class="font-bold">55 units</span>
-</div>
-<div class="w-full bg-slate-100 dark:bg-slate-800 rounded-full h-2">
-<div class="bg-orange-500 h-2 rounded-full" style="width: 25%"></div>
-</div>
-</div>
-<button class="w-full py-2 bg-slate-50 dark:bg-slate-800 border border-slate-200 dark:border-slate-700 rounded-lg text-sm font-bold flex items-center justify-center gap-2 hover:bg-primary hover:text-white hover:border-primary transition-all">
-<span class="material-symbols-outlined text-[18px]">add_box</span>
-                            Quick Entry
-                        </button>
-</div>
-</div>
-</div>
-<!-- Database Tracking Section -->
-<div class="bg-white dark:bg-slate-900 border border-slate-200 dark:border-slate-800 rounded-xl overflow-hidden">
-<div class="p-6 border-b border-slate-200 dark:border-slate-800 flex justify-between items-center">
-<h3 class="text-lg font-bold">Recent Activities</h3>
-<a class="text-primary text-sm font-bold hover:underline" href="#">View Database</a>
-</div>
-<div class="overflow-x-auto">
-<table class="w-full text-left">
-<thead class="bg-slate-50 dark:bg-slate-800/50">
-<tr>
-<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Donor ID</th>
-<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Blood Type</th>
-<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Date</th>
-<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Units</th>
-<th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Status</th>
-</tr>
-</thead>
-<tbody class="divide-y divide-slate-200 dark:divide-slate-800">
-<tr>
-<td class="px-6 py-4 text-sm font-medium">#DN-9284</td>
-<td class="px-6 py-4 text-sm"><span class="font-bold text-primary">A+</span></td>
-<td class="px-6 py-4 text-sm text-slate-500">Oct 24, 2023</td>
-<td class="px-6 py-4 text-sm font-bold">2</td>
-<td class="px-6 py-4 text-sm">
-<span class="inline-flex items-center gap-1 text-green-600 font-medium">
-<span class="size-2 rounded-full bg-green-500"></span>
-                                        Processed
-                                    </span>
-</td>
-</tr>
-<tr>
-<td class="px-6 py-4 text-sm font-medium">#DN-9285</td>
-<td class="px-6 py-4 text-sm"><span class="font-bold text-primary">O-</span></td>
-<td class="px-6 py-4 text-sm text-slate-500">Oct 24, 2023</td>
-<td class="px-6 py-4 text-sm font-bold">1</td>
-<td class="px-6 py-4 text-sm">
-<span class="inline-flex items-center gap-1 text-blue-600 font-medium">
-<span class="size-2 rounded-full bg-blue-500"></span>
-                                        Testing
-                                    </span>
-</td>
-</tr>
-<tr>
-<td class="px-6 py-4 text-sm font-medium">#DN-9286</td>
-<td class="px-6 py-4 text-sm"><span class="font-bold text-primary">B+</span></td>
-<td class="px-6 py-4 text-sm text-slate-500">Oct 23, 2023</td>
-<td class="px-6 py-4 text-sm font-bold">3</td>
-<td class="px-6 py-4 text-sm">
-<span class="inline-flex items-center gap-1 text-green-600 font-medium">
-<span class="size-2 rounded-full bg-green-500"></span>
-                                        Processed
-                                    </span>
-</td>
-</tr>
-</tbody>
-</table>
-</div>
-</div>
-</main>
+
+  <!-- SIDEBAR -->
+  <aside class="w-64 flex-shrink-0 border-r border-slate-200 bg-white flex flex-col justify-between">
+    <div class="p-6">
+      <div class="flex items-center gap-3 mb-10">
+        <div class="size-10 bg-primary rounded-lg flex items-center justify-center text-white">
+          <span class="material-symbols-outlined">bloodtype</span>
+        </div>
+        <div>
+          <h1 class="text-lg font-bold leading-tight">BloodBank Pro</h1>
+          <p class="text-xs text-slate-500 uppercase tracking-wider font-semibold">Inventory System</p>
+        </div>
+      </div>
+      <nav class="space-y-1">
+        <a class="flex items-center gap-3 px-4 py-3 rounded-lg bg-primary/10 text-primary font-semibold" href="#">
+          <span class="material-symbols-outlined">dashboard</span><span>Dashboard</span>
+        </a>
+        <a onclick="showSection('inventory')" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer">
+          <span class="material-symbols-outlined">inventory_2</span><span>Inventory</span>
+        </a>
+        <a onclick="showSection('donors')" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer">
+          <span class="material-symbols-outlined">group</span><span>Donors</span>
+        </a>
+        <a onclick="showSection('appointments')" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer">
+          <span class="material-symbols-outlined">calendar_today</span><span>Appointments</span>
+        </a>
+        <a onclick="showSection('reports')" class="flex items-center gap-3 px-4 py-3 rounded-lg text-slate-600 hover:bg-slate-100 transition-colors cursor-pointer">
+          <span class="material-symbols-outlined">bar_chart</span><span>Reports</span>
+        </a>
+      </nav>
+    </div>
+    <div class="p-6 border-t border-slate-200">
+      <div class="flex items-center gap-3 mb-4">
+        <div class="size-10 rounded-full bg-primary/10 flex items-center justify-center text-primary font-bold text-sm" id="userInitials">DR</div>
+        <div>
+          <p class="text-sm font-bold" id="sidebarName">Dr. Julian Reed</p>
+          <p class="text-xs text-slate-500" id="sidebarRole">Administrator</p>
+        </div>
+      </div>
+      <button onclick="logout()" class="w-full flex items-center gap-2 px-3 py-2 text-sm text-slate-500 hover:text-red-600 hover:bg-red-50 rounded-lg transition-colors font-semibold">
+        <span class="material-symbols-outlined text-[18px]">logout</span> Cerrar sesión
+      </button>
+    </div>
+  </aside>
+
+  <!-- MAIN -->
+  <main class="flex-1 overflow-y-auto p-8">
+
+    <!-- Header -->
+    <div class="flex flex-col md:flex-row justify-between items-start md:items-center gap-4 mb-8">
+      <div>
+        <h2 class="text-3xl font-black tracking-tight">Inventory Dashboard</h2>
+        <p class="text-slate-500">Monitoreo en tiempo real del inventario de sangre.</p>
+      </div>
+      <div class="flex gap-3">
+        <button onclick="exportCSV()" class="flex items-center gap-2 px-4 py-2 border border-slate-200 rounded-lg font-semibold hover:bg-slate-50 transition-colors text-sm">
+          <span class="material-symbols-outlined text-[20px]">file_download</span> Export CSV
+        </button>
+        <button onclick="openDonationModal()" class="flex items-center gap-2 px-4 py-2 bg-primary text-white rounded-lg font-semibold hover:bg-primary/90 transition-colors shadow-lg shadow-primary/20 text-sm">
+          <span class="material-symbols-outlined text-[20px]">add</span> New Donation
+        </button>
+      </div>
+    </div>
+
+    <!-- TOAST -->
+    <div id="toast" class="hidden fixed top-6 right-6 z-50 px-5 py-3 rounded-xl shadow-2xl text-white text-sm font-semibold flex items-center gap-2 slide-in min-w-[260px]">
+      <span class="material-symbols-outlined text-[18px]" id="toastIcon">check_circle</span>
+      <span id="toastText"></span>
+    </div>
+
+    <!-- METRIC CARDS -->
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-10">
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+        <div class="flex justify-between items-start mb-4">
+          <div class="size-12 rounded-lg bg-blue-50 flex items-center justify-center text-blue-600">
+            <span class="material-symbols-outlined">water_drop</span>
+          </div>
+          <span class="px-2 py-1 rounded bg-green-100 text-green-600 text-xs font-bold uppercase tracking-wider">Stock Total</span>
+        </div>
+        <p class="text-slate-500 text-sm font-medium mb-1">Total Units</p>
+        <p class="text-3xl font-black"><span id="metricTotal">0</span> <span class="text-sm font-normal text-slate-400">units</span></p>
+      </div>
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+        <div class="flex justify-between items-start mb-4">
+          <div class="size-12 rounded-lg bg-orange-50 flex items-center justify-center text-orange-600">
+            <span class="material-symbols-outlined">warning</span>
+          </div>
+          <span class="px-2 py-1 rounded bg-orange-100 text-orange-600 text-xs font-bold uppercase tracking-wider" id="criticalBadge">Alert</span>
+        </div>
+        <p class="text-slate-500 text-sm font-medium mb-1">Critical Levels</p>
+        <p class="text-3xl font-black"><span id="metricCritical">0</span> <span class="text-sm font-normal text-slate-400">Types Low</span></p>
+      </div>
+      <div class="bg-white p-6 rounded-xl border border-slate-200 shadow-sm">
+        <div class="flex justify-between items-start mb-4">
+          <div class="size-12 rounded-lg bg-primary/5 flex items-center justify-center text-primary">
+            <span class="material-symbols-outlined">volunteer_activism</span>
+          </div>
+          <span class="px-2 py-1 rounded bg-slate-100 text-slate-600 text-xs font-bold uppercase tracking-wider">Today</span>
+        </div>
+        <p class="text-slate-500 text-sm font-medium mb-1">Donations Today</p>
+        <p class="text-3xl font-black"><span id="metricToday">0</span> <span class="text-sm font-normal text-slate-400">units added</span></p>
+      </div>
+    </div>
+
+    <!-- BLOOD TYPE GRID -->
+    <div class="mb-8">
+      <h3 class="text-xl font-bold mb-4">Stock Levels by Blood Type</h3>
+      <div id="bloodGrid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"></div>
+    </div>
+
+    <!-- RECENT ACTIVITIES TABLE -->
+    <div class="bg-white border border-slate-200 rounded-xl overflow-hidden">
+      <div class="p-6 border-b border-slate-200 flex justify-between items-center">
+        <h3 class="text-lg font-bold">Recent Activities</h3>
+        <button onclick="renderActivities()" class="text-primary text-sm font-bold hover:underline flex items-center gap-1">
+          <span class="material-symbols-outlined text-[16px]">refresh</span> Refresh
+        </button>
+      </div>
+      <div class="overflow-x-auto">
+        <table class="w-full text-left">
+          <thead class="bg-slate-50">
+            <tr>
+              <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Donor ID</th>
+              <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Blood Type</th>
+              <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Date</th>
+              <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Units</th>
+              <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Status</th>
+              <th class="px-6 py-4 text-xs font-bold text-slate-500 uppercase tracking-wider">Actions</th>
+            </tr>
+          </thead>
+          <tbody id="activitiesBody" class="divide-y divide-slate-100"></tbody>
+        </table>
+      </div>
+    </div>
+
+  </main>
+</div>
+
+<!-- ==================== MODAL: Nueva Donación ==================== -->
+<div id="donationModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+  <div class="bg-white rounded-2xl shadow-2xl w-full max-w-md mx-4 p-8 slide-in">
+    <div class="flex justify-between items-center mb-6">
+      <h3 class="text-xl font-bold">Nueva Donación</h3>
+      <button onclick="closeDonationModal()" class="text-slate-400 hover:text-slate-700 transition-colors">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <form id="donationForm" class="space-y-4" onsubmit="saveDonation(event)">
+      <div>
+        <label class="block text-sm font-semibold text-slate-700 mb-1">Donor ID</label>
+        <input id="fDonorId" type="text" placeholder="Ej: #DN-0001" required
+          class="w-full h-11 px-4 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm"/>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-slate-700 mb-1">Tipo de Sangre</label>
+        <select id="fBloodType" required
+          class="w-full h-11 px-4 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm bg-white">
+          <option value="">Seleccionar...</option>
+          <option>A+</option><option>A-</option>
+          <option>B+</option><option>B-</option>
+          <option>AB+</option><option>AB-</option>
+          <option>O+</option><option>O-</option>
+        </select>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-slate-700 mb-1">Unidades</label>
+        <input id="fUnits" type="number" min="1" max="20" value="1" required
+          class="w-full h-11 px-4 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm"/>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-slate-700 mb-1">Estado</label>
+        <select id="fStatus"
+          class="w-full h-11 px-4 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm bg-white">
+          <option value="testing">Testing</option>
+          <option value="processed">Processed</option>
+          <option value="rejected">Rejected</option>
+        </select>
+      </div>
+      <div class="flex gap-3 pt-2">
+        <button type="button" onclick="closeDonationModal()"
+          class="flex-1 h-11 border border-slate-200 rounded-xl font-semibold text-sm hover:bg-slate-50 transition-colors">
+          Cancelar
+        </button>
+        <button type="submit" id="saveBtn"
+          class="flex-1 h-11 bg-primary text-white rounded-xl font-semibold text-sm hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined text-[18px]">save</span> Guardar
+        </button>
+      </div>
+    </form>
+  </div>
+</div>
+
+<!-- ==================== MODAL: Editar Stock ==================== -->
+<div id="stockModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+  <div class="bg-white rounded-2xl shadow-2xl w-full max-w-sm mx-4 p-8 slide-in">
+    <div class="flex justify-between items-center mb-6">
+      <h3 class="text-xl font-bold">Editar Stock — <span id="stockModalType" class="text-primary"></span></h3>
+      <button onclick="closeStockModal()" class="text-slate-400 hover:text-slate-700 transition-colors">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+    <div class="space-y-4">
+      <div>
+        <label class="block text-sm font-semibold text-slate-700 mb-1">Unidades actuales</label>
+        <input id="stockUnits" type="number" min="0"
+          class="w-full h-11 px-4 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm"/>
+      </div>
+      <div>
+        <label class="block text-sm font-semibold text-slate-700 mb-1">Capacidad máxima</label>
+        <input id="stockMax" type="number" min="1"
+          class="w-full h-11 px-4 border border-slate-200 rounded-xl outline-none focus:ring-2 focus:ring-primary/20 focus:border-primary transition-all text-sm"/>
+      </div>
+      <div class="flex gap-3 pt-2">
+        <button onclick="closeStockModal()" class="flex-1 h-11 border border-slate-200 rounded-xl font-semibold text-sm hover:bg-slate-50 transition-colors">Cancelar</button>
+        <button onclick="saveStock()" class="flex-1 h-11 bg-primary text-white rounded-xl font-semibold text-sm hover:bg-primary/90 transition-colors flex items-center justify-center gap-2">
+          <span class="material-symbols-outlined text-[18px]">save</span> Actualizar
+        </button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- ==================== MODAL: Confirmar borrar actividad ==================== -->
+<div id="deleteModal" class="hidden fixed inset-0 z-50 flex items-center justify-center bg-black/50 backdrop-blur-sm">
+  <div class="bg-white rounded-2xl shadow-2xl w-full max-w-sm mx-4 p-8 slide-in text-center">
+    <div class="size-14 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
+      <span class="material-symbols-outlined text-red-600 text-3xl">delete</span>
+    </div>
+    <h3 class="text-lg font-bold mb-2">¿Eliminar actividad?</h3>
+    <p class="text-slate-500 text-sm mb-6">Esta acción no se puede deshacer.</p>
+    <div class="flex gap-3">
+      <button onclick="closeDeleteModal()" class="flex-1 h-11 border border-slate-200 rounded-xl font-semibold text-sm hover:bg-slate-50 transition-colors">Cancelar</button>
+      <button onclick="confirmDelete()" class="flex-1 h-11 bg-red-600 text-white rounded-xl font-semibold text-sm hover:bg-red-700 transition-colors">Eliminar</button>
+    </div>
+  </div>
 </div>
 </body>
 
+<script src="./js/dashboard.js"></script>
 </html>
