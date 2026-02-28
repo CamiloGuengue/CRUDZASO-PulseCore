@@ -7,7 +7,7 @@ const router = express.Router();
 
 router.get('/users', async (req, res) => {  // Sin checkRole
   try {
-    const result = await query('SELECT id, email, role FROM users');
+    const result = await query('SELECT full_name, email, phone FROM users');
     res.json(result.rows);
   } catch (e) {
     res.status(500).json({ error: e.message });
